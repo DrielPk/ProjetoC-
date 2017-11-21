@@ -1,0 +1,42 @@
+﻿@model WebApplication4.Models.Evento
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_evt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_evt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contato_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contato_evt)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id_evento }) |
+    @Html.ActionLink("Voltar para a Lista", "Index")
+</p>

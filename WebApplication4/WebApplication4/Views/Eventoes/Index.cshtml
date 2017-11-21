@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebApplication4.Models.Evento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Agenda</h2>
+<p>@using (Html.BeginForm("Index","Eventoes", FormMethod.Get))
+        {
+    <text>Contato do Evento</text>@Html.DropDownList("Contato do Evento", new SelectList(ViewBag.contato_evt))
+    <text>Titulo Evento</text>@Html.DropDownList("Titulo do Evento", new SelectList(ViewBag.nome_evt))
+    <input type="submit" value="Procurar" />
+            }</ p >
+<p>
+    @Html.ActionLink("Novo registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.nome_evt)</th>
+        <th>@Html.DisplayNameFor(model => model.data_evt)</th>
+        <th>@Html.DisplayNameFor(model => model.contato_evt)</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.nome_evt)</td>
+        <td>@Html.DisplayFor(modelItem => item.data_evt)</td>
+        <td>@Html.DisplayFor(modelItem => item.contato_evt)</td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id_evento }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id_evento }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.id_evento })
+        </td>
+    </tr>
+}
+
+</table>

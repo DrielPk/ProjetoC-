@@ -1,0 +1,48 @@
+﻿@model WebApplication4.Models.Evento
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Deletar Registro</h2>
+
+<h3>Você quer deletar este registro?</h3>
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome_evt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.data_evt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contato_evt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contato_evt)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar para a lista", "Index")
+        </div>
+    }
+</div>

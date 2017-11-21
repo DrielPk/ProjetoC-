@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AgendaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="id_evento" />
+    </Key>
+    <Property Name="id_evento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome_evt" Type="varchar" MaxLength="90" Nullable="false" />
+    <Property Name="data_evt" Type="datetime" Nullable="false" />
+    <Property Name="contato_evt" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="AgendaModelStoreContainer">
+    <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
